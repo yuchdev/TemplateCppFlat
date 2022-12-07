@@ -19,7 +19,7 @@ target_compile_features(bidirect-tree_lib PUBLIC cxx_std_17)
 
 # ---- Declare executable ----
 
-add_executable(bidirect-tree_exe source/main.cpp)
+add_executable(bidirect-tree_exe src/main.cpp)
 add_executable(bidirect-tree::exe ALIAS bidirect-tree_exe)
 
 set_property(TARGET bidirect-tree_exe PROPERTY OUTPUT_NAME bidirect-tree)
