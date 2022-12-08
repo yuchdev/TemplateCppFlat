@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.14)
 include(cmake/prelude.cmake)
 
 project(
-    bidirect-tree
+    cpp-template
     VERSION 0.1.0
     DESCRIPTION "Short description"
     HOMEPAGE_URL "https://example.com/"
@@ -15,12 +15,12 @@ include(cmake/variables.cmake)
 
 # ---- Declare executable ----
 
-add_executable(bidirect-tree_exe src/main.cpp)
-add_executable(bidirect-tree::exe ALIAS bidirect-tree_exe)
+add_executable(cpp-template_exe src/main.cpp)
+add_executable(cpp-template::exe ALIAS cpp-template_exe)
 
-set_property(TARGET bidirect-tree_exe PROPERTY OUTPUT_NAME bidirect-tree)
+set_property(TARGET cpp-template_exe PROPERTY OUTPUT_NAME cpp-template)
 
-target_compile_features(bidirect-tree_exe PRIVATE cxx_std_17)
+target_compile_features(cpp-template_exe PRIVATE cxx_std_17)
 
 # ---- Install rules ----
 if(NOT CMAKE_SKIP_INSTALL_RULES)
@@ -28,12 +28,12 @@ if(NOT CMAKE_SKIP_INSTALL_RULES)
 endif()
 
 # ---- Developer mode ----
-if(NOT bidirect-tree_DEVELOPER_MODE)
+if(NOT cpp-template_DEVELOPER_MODE)
   return()
 elseif(NOT PROJECT_IS_TOP_LEVEL)
   message(
       AUTHOR_WARNING
-      "Developer mode is intended for developers of bidirect-tree"
+      "Developer mode is intended for developers of cpp-template"
   )
 endif()
 

@@ -1,6 +1,6 @@
 install(
-    TARGETS bidirect-tree_exe
-    RUNTIME COMPONENT bidirect-tree_Runtime
+    TARGETS cpp-template_exe
+    RUNTIME COMPONENT cpp-template_Runtime
 )
 
 if(PROJECT_IS_TOP_LEVEL)
