@@ -1,8 +1,6 @@
-#include "lib.hpp"
+#include <iostream>
 
 auto main() -> int
 {
-  auto const lib = library {};
-
-  return lib.name == "bidirect-tree" ? 0 : 1;
+    return 0;
 }
