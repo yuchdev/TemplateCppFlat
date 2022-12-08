@@ -7,9 +7,7 @@ project(FunctionalTests LANGUAGES CXX)
 # ---- Tests ----
 
 add_executable(functional_test functional_test/functional_test.cpp)
-target_link_libraries(bidirect-tree_test PRIVATE bidirect-tree_lib)
-target_compile_features(bidirect-tree_test PRIVATE cxx_std_17)
-
+target_compile_features(functional_test PRIVATE cxx_std_17)
 add_test(NAME functional_test COMMAND functional_test)
 
 # ---- End-of-file commands ----

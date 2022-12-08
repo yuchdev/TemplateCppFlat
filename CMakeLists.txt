@@ -13,10 +13,6 @@ project(
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
 
-# ---- Declare library ----
-
-target_compile_features(bidirect-tree_lib PUBLIC cxx_std_17)
-
 # ---- Declare executable ----
 
 add_executable(bidirect-tree_exe src/main.cpp)
