@@ -12,6 +12,7 @@ project(
 
 include(cmake/project-is-top-level.cmake)
 include(cmake/variables.cmake)
+include(cmake/get-win32-winnt.cmake)
 
 # ---- Declare executable ----
 
@@ -19,6 +20,7 @@ add_executable(cpp-template_exe src/main.cpp)
 add_executable(cpp-template::exe ALIAS cpp-template_exe)
 
 set_property(TARGET cpp-template_exe PROPERTY OUTPUT_NAME cpp-template)
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 target_compile_features(cpp-template_exe PRIVATE cxx_std_17)
 
@@ -38,3 +40,10 @@ elseif(NOT PROJECT_IS_TOP_LEVEL)
 endif()
 
 include(cmake/dev-mode.cmake)
+include(CTest)
+enable_testing()
+
+if(WIN32)
+    get_win32_winnt(ver)
+    add_definitions(-D_WIN32_WINNT=${ver})
+endif()
